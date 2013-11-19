@@ -15,7 +15,7 @@
       (substring (or load-file-name "~/.emacs.d/init.el") 0 -7))
      (conf-list (list
                  "el-get.el"
-                 "key-bind.el"
+                 "misc.el"
                  "window.el"
                  "exec-path.el"
                  "git-gutter.el"
@@ -30,7 +30,6 @@
                  "server.el"
                  "dash.el"
                  "color-theme.el"
-                 "misc.el"
                 )))
   (dolist (conf conf-list)
     (load (concat user-emacs-directory "conf/" conf))))
