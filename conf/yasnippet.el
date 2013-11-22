@@ -17,5 +17,6 @@
     (setq helm-c-yas-space-match-any-greedy t) 
     (global-set-key (kbd "C-l y") 'helm-c-yas-complete)
     )
+  ; 某プロジェクトの設定ファイルが重いため
   (add-hook 'conf-mode (yas-global-mode 0))
   )
