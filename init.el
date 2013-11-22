@@ -17,7 +17,7 @@
                  "el-get.el"
                  "misc.el"
                  "window.el"
-                 "exec-path.el"
+                 "exec-path-from-shell.el"
                  "git-gutter.el"
                  "helm.el"
                  "yasnippet.el"

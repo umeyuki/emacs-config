@@ -1,3 +1,9 @@
+;; 大文字・小文字を区別しない
+(setq completion-ignore-case t)
+
+;; バッファ自動再読み込み
+(global-auto-revert-mode 1)
+
 ;; auto-async-byte-compile
 (require 'auto-async-byte-compile)
 (autoload 'enable-auto-async-byte-compile-mode "auto-async-byte-compile" nil t)
