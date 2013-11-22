@@ -10,21 +10,6 @@
                        temp-file
                        (file-name-directory buffer-file-name))))
     (list "perl" (list "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]" "-wc" local-file))))
-;; (defun flymake-perl-init ()
-;;   (plcmp-with-set-perl5-lib
-;;    (let* ((temp-file   (flymake-init-create-temp-buffer-copy
-;;                         'flymake-create-temp-inplace))
-;;           (local-file  (file-relative-name
-;;                         temp-file
-;;                         (file-name-directory buffer-file-name)))
-;;           (perl5lib (split-string (or (getenv "PERL5LIB") "") ":"))
-;;           (args '("-wc")))
-;;      (progn
-;;        (dolist (lib perl5lib)
-;;          (unless (equal lib "")
-;;            (add-to-list 'args (concat "-I" lib) t)))
-;;        (add-to-list 'args local-file t)
-;;        (list "perl" args)))))
 
 (setq flymake-allowed-file-name-masks
       (cons '("\\.\\(t\\|p[ml]\\|psgi\\)$"

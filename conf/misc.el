@@ -4,10 +4,10 @@
 ;; バッファ自動再読み込み
 (global-auto-revert-mode 1)
 
-;; auto-async-byte-compile
-(require 'auto-async-byte-compile)
-(autoload 'enable-auto-async-byte-compile-mode "auto-async-byte-compile" nil t)
-(add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
+;; ;; auto-async-byte-compile
+;; (require 'auto-async-byte-compile)
+;; (autoload 'enable-auto-async-byte-compile-mode "auto-async-byte-compile" nil t)
+;; (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
 
 ;; exchange alt <-> meta
 (custom-set-variables
