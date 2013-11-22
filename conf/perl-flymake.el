@@ -3,9 +3,6 @@
 
 ;(setq flymake-log-level 3)
 
-;; disable GUI warnings
-(setq flymake-gui-warnings-enabled nil)
-
 (defun flymake-perl-init ()
   (let* ((temp-file   (flymake-init-create-temp-buffer-copy
                        'flymake-create-temp-inplace))
@@ -13,7 +10,6 @@
                        temp-file
                        (file-name-directory buffer-file-name))))
     (list "perl" (list "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]" "-wc" local-file))))
-
 ;; (defun flymake-perl-init ()
 ;;   (plcmp-with-set-perl5-lib
 ;;    (let* ((temp-file   (flymake-init-create-temp-buffer-copy
