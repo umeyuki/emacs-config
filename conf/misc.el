@@ -1,3 +1,8 @@
+;; auto-async-byte-compile
+(require 'auto-async-byte-compile)
+(autoload 'enable-auto-async-byte-compile-mode "auto-async-byte-compile" nil t)
+(add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
+
 ;; exchange alt <-> meta
 (custom-set-variables
    '(ns-alternate-modifier 'alt)
@@ -78,10 +83,6 @@
 ;; yes or no to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; auto-async-byte-compile
-(require 'auto-async-byte-compile)
-(autoload 'enable-auto-async-byte-compile-mode "auto-async-byte-compile" nil t)
-(add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
 
 ;; add +x to saving file
 (add-hook 'after-save-hook

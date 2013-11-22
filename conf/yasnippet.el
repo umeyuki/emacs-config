@@ -2,7 +2,7 @@
   (setq yas-trigger-key "TAB")
   (yas-global-mode 1)
   (setq yas-snippet-dirs
-        '("~/.emacs.d/snippets" ;; 作成するスニペットはここに入る
+        '("~/.emacs.d/snippets/" ;; 作成するスニペットはここに入る
           ))
   
   ;; コメントやリテラルではスニペットを展開しない

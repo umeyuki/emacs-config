@@ -26,9 +26,12 @@
           popwin
           quickrun
           auto-async-byte-compile
+          emmet-mode
           color-theme
           dash-at-point
           helm-project
+          ;; color-moccur
+          ;; helm-c-moccur
           yasnippet
           helm-c-yasnippet
           ))

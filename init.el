@@ -22,6 +22,7 @@
                  "helm.el"
                  "yasnippet.el"
                  "auto-complete.el"
+                 "emmet-mode.el"
                  "ruby-mode.el"
                  "perl-mode.el"
                  "perl-completion.el"
