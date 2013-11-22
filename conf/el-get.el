@@ -31,6 +31,7 @@
           color-theme
           dash-at-point
           helm-project
+          pbcopy
           ;; color-moccur
           ;; helm-c-moccur
           yasnippet
