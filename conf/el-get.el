@@ -28,4 +28,7 @@
           auto-async-byte-compile
           color-theme
           dash-at-point
-          helm-project))
+          helm-project
+          yasnippet
+          helm-c-yasnippet
+          ))

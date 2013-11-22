@@ -6,6 +6,5 @@
 
 ;; メニュー専用のキーマップを使う (for C-p/C-n)
 (setq ac-use-menu-map t)
-;; (define-key ac-menu-map (kbd "C-n")   'ac-next)
-;; (define-key ac-menu-map (kbd "C-p")   'ac-previous)
-;; (define-key ac-menu-map (kbd "M-TAB") nil)
+(setq ac-auto-start nil)
+(define-key ac-mode-map (kbd "C-l C-a") 'auto-complete)
