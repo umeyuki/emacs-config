@@ -1,4 +1,2 @@
-(when (memq window-system '(mac ns))
-  (require 'pbcopy)
-  (turn-on-pbcopy)
-  )
+(when (require 'pbcopy nil t)
+  (turn-on-pbcopy))
