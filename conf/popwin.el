@@ -2,3 +2,6 @@
 (setq display-buffer-function 'popwin:display-buffer)
 (setq popwin:popup-window-position 'bottom)
 (push '(" *auto-async-byte-compile*") popwin:special-display-config)
+(setq popwin:special-display-config '(("*compilatoin*" :noselect t)
+                                        ("helm" :regexp t :height 0.4)
+                                        ))
