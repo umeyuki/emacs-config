@@ -15,9 +15,9 @@
       (substring (or load-file-name "~/.emacs.d/init.el") 0 -7))
      (conf-list (list
                  "el-get.el"
+                 "exec-path.el"
                  "misc.el"
                  "window.el"
-                 "exec-path"
                  "git-gutter.el"
                  "helm.el"
                  "yasnippet.el"
