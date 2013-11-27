@@ -19,7 +19,6 @@
 (el-get 'sync
         '(
           el-get
-          exec-path-from-shell
           git-gutter
           helm
           auto-complete
