@@ -28,6 +28,7 @@
           auto-async-byte-compile
           emmet-mode
           color-theme
+          color-theme-solarized
           dash-at-point
           helm-project
           pbcopy

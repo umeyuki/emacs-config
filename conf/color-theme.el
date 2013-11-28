@@ -1,4 +1,7 @@
-(require 'color-theme)
-(color-theme-initialize)
-
-;(color-theme-molokai)
+;; color-theme.el
+(when (require 'color-theme)
+  (color-theme-initialize)
+  (when (require 'color-theme-solarized)
+    (load-theme 'solarized-dark t)
+    )
+  )

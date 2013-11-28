@@ -1,11 +1,3 @@
-(setq shell-file-name "/bin/sh")
-
-(let*
-    ((path (list "/usr/local/bin"
-                 "~/.plenv/shims"
-                 "~/.rbenv/shims"
-                 "~/local/bin"
-)))
-  (dolist (p path)
-    (add-to-list 'exec-path (expand-file-name p))
-    (setenv "PATH" (concat (expand-file-name p) ":" (getenv "PATH")))))
+(loop for x in (reverse
+                (split-string (substring (shell-command-to-string "echo $PATH") 0 -1) ":"))
+      do (add-to-list 'exec-path x))

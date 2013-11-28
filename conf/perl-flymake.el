@@ -1,7 +1,7 @@
 (require 'flymake)
 (require 'perl-completion)
 
-;(setq flymake-log-level 3)
+;; ;(setq flymake-log-level 3)
 
 (defun flymake-perl-init ()
   (let* ((temp-file   (flymake-init-create-temp-buffer-copy
@@ -29,3 +29,4 @@
     (when err
       (message err))))
 (define-key global-map (kbd "M-e") 'next-flymake-error)
+
