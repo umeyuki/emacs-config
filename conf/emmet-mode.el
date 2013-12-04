@@ -6,5 +6,6 @@
           (define-key emmet-mode-keymap (kbd "C-l C-j") 'emmet-expand-yas)
           )
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; マークアップモードで自動的に emmet-mode をたちあげる
+(add-to-list 'auto-mode-alist '("\\.tt$" . html-mode))
 (eval-after-load "emmet-mode"
   '(define-key emmet-mode-keymap (kbd "C-j") nil))

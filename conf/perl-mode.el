@@ -3,8 +3,25 @@
 (add-to-list 'auto-mode-alist '("\\.psgi$" . cperl-mode))
 (add-to-list 'auto-mode-alist '("\\.t\\'"  . cperl-mode))
 (add-to-list 'auto-mode-alist '("cpanfile"  . cperl-mode))
-
+; .ちかじかいれる
+;(cperl-set-style "PerlStyle")
 ;; perldoc -m を開く
+
+(eval-after-load "cperl-mode"
+  '(progn
+     (cperl-set-style "PerlStyle")
+     (define-key cperl-mode-map (kbd "C-m") 'newline-and-indent)
+     (define-key cperl-mode-map (kbd "(") nil)
+     (define-key cperl-mode-map (kbd "{") nil)
+     (define-key cperl-mode-map (kbd "[") nil)
+     (define-key cperl-mode-map (kbd "M-n") 'flymake-goto-next-error)
+     (define-key cperl-mode-map (kbd "M-p") 'flymake-goto-prev-error)
+     (define-key cperl-mode-map (kbd "C-c t") 'perl-run-prove)))
+(custom-set-variables
+ '(cperl-indent-parens-as-block t)
+ '(cperl-close-paren-offset     -4)
+ '(cperl-indent-subs-specially  nil))
+
 
 ;; モジュールソースバッファの場合はその場で、
 ;; その他のバッファの場合は別ウィンドウに開く。
@@ -54,3 +71,41 @@
   (interactive)
   (save-excursion (mark-defun)
                   (perltidy-region)))
+
+
+(require 'flymake)             
+(require 'perl-completion)
+
+;; ;(setq flymake-log-level 3)
+
+(add-hook 'cperl-mode-hook
+          '(lambda ()
+             (flymake-mode t)             
+             (perl-completion-mode t)
+             (add-to-list 'ac-sources 'ac-source-perl-completion)
+             ))
+
+;; M-e でエラー箇所に飛ぶ
+(defun next-flymake-error ()
+  (interactive)
+  (flymake-goto-next-error)
+  (let ((err (get-char-property (point) 'help-echo)))
+    (when err
+      (message err))))
+(define-key global-map (kbd "M-e") 'next-flymake-error)
+
+(defun flymake-perl-init ()
+  (let* ((temp-file   (flymake-init-create-temp-buffer-copy
+                       'flymake-create-temp-inplace))
+         (local-file  (file-relative-name
+                       temp-file
+                       (file-name-directory buffer-file-name))))
+    (list "perl" (list "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]" "-wc" local-file))))
+
+(setq flymake-allowed-file-name-masks
+      (cons '("\\.\\(t\\|p[ml]\\|psgi\\)$"
+              flymake-perl-init
+              flymake-simple-cleanup
+              flymake-get-real-file-name)
+            flymake-allowed-file-name-masks))
+

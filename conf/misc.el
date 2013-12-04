@@ -94,6 +94,11 @@
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
 
+(xterm-mouse-mode t)
+(mouse-wheel-mode t)
+(global-set-key   [mouse-4] '(lambda () (interactive) (scroll-down 1)))
+(global-set-key   [mouse-5] '(lambda () (interactive) (scroll-up   1)))
+
 ;; Cocoaの人向け
 
 ;;;; metaキーを入れ替える
@@ -105,3 +110,4 @@
 
 ;;;; C-z で最小化するのうざいのでころす
 ;;(define-key global-map (kbd "C-z") nil)
+

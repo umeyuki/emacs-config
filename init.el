@@ -25,13 +25,10 @@
                  "emmet-mode.el"
                  "ruby-mode.el"
                  "perl-mode.el"
-                 "perl-completion.el"
-                 "perl-flymake.el"
                  "popwin.el"
                  "pbcopy.el"
                  "quickrun.el"
                  "helm-project.el"
-                 "server.el"
                  "dash.el"
                  "color-theme.el"
                 )))
