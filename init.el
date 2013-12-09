@@ -31,6 +31,7 @@
                  "helm-project.el"
                  "dash.el"
                  "color-theme.el"
+                 "server.el"
                 )))
   (dolist (conf conf-list)
     (load (concat user-emacs-directory "conf/" conf))))
