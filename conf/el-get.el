@@ -34,4 +34,6 @@
           pbcopy
           yasnippet
           helm-c-yasnippet
+          smartrep
+          multiple-cursors
           ))
