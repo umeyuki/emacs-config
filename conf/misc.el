@@ -21,7 +21,6 @@
 (define-key global-map (kbd "C-h") 'delete-backward-char)
 (define-key global-map (kbd "C-o") 'other-window)
 (define-key global-map (kbd "C-\\") 'undo)
-(define-key global-map (kbd "C-l r") 'query-replace)
 (define-key global-map (kbd "C-l \\") 'indent-region)
 
 ;; 折り返しトグルコマンド
@@ -32,7 +31,7 @@
 (global-set-key (kbd "C-j") 'newline-and-indent)
 
 ;; mark-sexp 
-(define-key global-map (kbd "M-p") 'mark-sexp)
+(define-key global-map (kbd "C-l C-p") 'mark-sexp)
 ;; esell
 
 (define-key global-map (kbd "C-l s") 'eshell)
@@ -45,7 +44,7 @@
 ;cua-mode
 (cua-mode -1)
 (setq cua-enable-cua-keys nil)
-(define-key global-map (kbd "C-l c") 'cua-mode)
+(define-key global-map (kbd "C-c c") 'cua-mode)
 (define-key cua-global-keymap (kbd "C-@") 'cua-set-rectangle-mark)
 
 ;; isearch
