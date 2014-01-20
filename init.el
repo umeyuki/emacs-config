@@ -16,7 +16,7 @@
      (conf-list (list
                  "el-get.el"
                  "exec-path.el"
-                 "misc.el"
+                 "misc.el"                                  
                  "editting.el"
                  "window.el"
                  "git-gutter.el"
@@ -24,6 +24,7 @@
                  "yasnippet.el"
                  "auto-complete.el"
                  "emmet.el"
+                 "js.el"
                  "ruby.el"
                  "perl.el"
                  "popwin.el"

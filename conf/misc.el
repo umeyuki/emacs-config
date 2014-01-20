@@ -44,7 +44,7 @@
 ;cua-mode
 (cua-mode -1)
 (setq cua-enable-cua-keys nil)
-(define-key global-map (kbd "C-c c") 'cua-mode)
+(define-key global-map (kbd "C-l c") 'cua-mode)
 (define-key cua-global-keymap (kbd "C-@") 'cua-set-rectangle-mark)
 
 ;; isearch

@@ -17,3 +17,6 @@
                                          (?\| . ?\|)
                                          ))
              ))
+
+; slim-mode
+(require 'slim-mode)

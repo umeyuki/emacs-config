@@ -27,6 +27,10 @@
           quickrun
           auto-async-byte-compile
           emmet-mode
+          scss-mode
+          slim-mode
+          js2-mode
+          coffee-mode
           color-theme
           color-theme-solarized
           dash-at-point
