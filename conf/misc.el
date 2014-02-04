@@ -24,6 +24,7 @@
 (define-key global-map (kbd "C-o") 'other-window)
 (define-key global-map (kbd "C-\\") 'undo)
 (define-key global-map (kbd "C-l \\") 'indent-region)
+(define-key global-map (kbd "C-l e") 'eval-current-buffer)
 
 ;; 折り返しトグルコマンド
 (define-key global-map (kbd "C-c l") 'toggle-truncate-lines)
@@ -48,6 +49,7 @@
 (setq cua-enable-cua-keys nil)
 (define-key global-map (kbd "C-l c") 'cua-mode)
 (define-key cua-global-keymap (kbd "C-@") 'cua-set-rectangle-mark)
+(setq cua-enable-cua-keys nil)
 
 ;; isearch
 (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
