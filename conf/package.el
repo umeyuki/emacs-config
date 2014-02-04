@@ -1,2 +1,2 @@
-(package-install 'dayone)
-(package-install 'redo+)
+;(package-install 'dayone)
+;(package-install 'redo+)
