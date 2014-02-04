@@ -41,4 +41,5 @@
           anzu
           smartrep
           multiple-cursors
+          open-junk-file
           ))
