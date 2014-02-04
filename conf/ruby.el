@@ -10,12 +10,12 @@
              (setq ruby-indent-level tab-width)
              (define-key ruby-mode-map [return] 'ruby-reindent-then-newline-and-indent)             
              (setq ruby-deep-indent-paren-style nil)
-             (electric-pair-mode t)
+             (electric-pair-mode nil)
              (electric-indent-mode t)
              (electric-layout-mode t)
-             (setq electric-pair-pairs '(
-                                         (?\| . ?\|)
-                                         ))
+             ;; (setq electric-pair-pairs '(
+             ;;                             (?\| . ?\|)
+             ;;                             ))
              ))
 
 ; slim-mode

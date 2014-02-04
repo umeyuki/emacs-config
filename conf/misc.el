@@ -22,6 +22,7 @@
 (define-key global-map (kbd "C-o") 'other-window)
 (define-key global-map (kbd "C-\\") 'undo)
 (define-key global-map (kbd "C-l \\") 'indent-region)
+(define-key global-map (kbd "C-l e") 'eval-current-buffer)
 
 ;; 折り返しトグルコマンド
 (define-key global-map (kbd "C-c l") 'toggle-truncate-lines)

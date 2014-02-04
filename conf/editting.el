@@ -13,6 +13,7 @@
                     (";" . 'mc/mark-all-like-this)
                     ))
 
+(setq-default tab-width 4 indent-tabs-mode nil)
 ;; (when (and (executable-find "cmigemo")
 ;;            (require 'migemo nil t))
 ;;   (setq migemo-options '("-q" "--emacs"))
@@ -60,3 +61,11 @@
 ;; open-junk
 (setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/.junk/%Y/%m/%Y-%m-%d-%H%M%S."))
 (global-set-key (kbd "C-c C-j") 'open-junk-file)
+
+;; nginx-mode
+(require 'nginx-mode)
+;;(add-to-list 'auto-mode-alist '("nginx\\.conf$" . nginx-mode))
+(add-hook 'conf-mode-hook
+          (lambda ()
+            (when (string-match "nginx" (buffer-file-name))
+                            (nginx-mode))))

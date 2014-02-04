@@ -42,4 +42,5 @@
           smartrep
           multiple-cursors
           open-junk-file
+          nginx-mode
           ))
