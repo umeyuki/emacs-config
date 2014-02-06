@@ -44,4 +44,5 @@
           open-junk-file
           nginx-mode
           howm
+          historyf
           ))
