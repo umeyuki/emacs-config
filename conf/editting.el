@@ -89,3 +89,7 @@
 (global-set-key (kbd "C-l C-h") 'howm-menu)
 (setq howm-menu-lang 'ja)
 (setq howm-directory ( concat (getenv "HOME") "/Dropbox/.junk/"))
+
+(require 'historyf)
+(global-set-key (kbd "C-l C-b") 'historyf-back)
+(global-set-key (kbd "C-l C-f") 'historyf-forward)
