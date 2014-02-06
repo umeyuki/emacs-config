@@ -14,18 +14,6 @@
                     ))
 
 (setq-default tab-width 4 indent-tabs-mode nil)
-;; (when (and (executable-find "cmigemo")
-;;            (require 'migemo nil t))
-;;   (setq migemo-options '("-q" "--emacs"))
-
-;;   (setq migemo-user-dictionary nil)
-;;   (setq migemo-regex-dictionary nil)
-;;   (setq migemo-coding-system 'utf-8-unix)
-;;   (load-library "migemo")
-;;   (migemo-init)
-;; )
-;; (setq migemo-command "cmigemo")
-;; (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
 
 (require 'anzu)
 (global-anzu-mode +1)
@@ -40,7 +28,6 @@
 
 (global-set-key (kbd "C-l r") 'anzu-query-replace)
 (global-set-key (kbd "C-l R") 'anzu-query-replace-regexp)
-
 
 ;; scss
 (require 'scss-mode)
@@ -59,8 +46,14 @@
           '(lambda() (scss-custom)))
 
 ;; open-junk
-(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/.junk/%Y/%m/%Y-%m-%d-%H%M%S."))
-(global-set-key (kbd "C-c C-j") 'open-junk-file)
+(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/.junk/%Y-%m-%H%M%S_"))
+(global-set-key (kbd "C-c j") 'open-junk-file)
+
+;; howm
+(autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
+(global-set-key (kbd "C-l C-h") 'howm-menu)
+(setq howm-menu-lang 'ja)
+(setq howm-directory ( concat (getenv "HOME") "/Dropbox/.junk/"))
 
 ;; nginx-mode
 (require 'nginx-mode)
@@ -69,3 +62,8 @@
           (lambda ()
             (when (string-match "nginx" (buffer-file-name))
                             (nginx-mode))))
+
+; history like browser 
+(require 'historyf)
+(global-set-key (kbd "C-l C-b") 'historyf-back)
+(global-set-key (kbd "C-l C-f") 'historyf-forward)

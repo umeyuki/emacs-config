@@ -95,20 +95,8 @@
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
 
-(xterm-mouse-mode t)
-(mouse-wheel-mode t)
-(global-set-key   [mouse-4] '(lambda () (interactive) (scroll-down 1)))
-(global-set-key   [mouse-5] '(lambda () (interactive) (scroll-up   1)))
-
-;; Cocoaの人向け
-
-;;;; metaキーを入れ替える
-;;(setq ns-command-modifier (quote meta))
-;;(setq ns-alternate-modifier (quote super))
-
-;;;; 関連づけなどからファイルを開く場合に新規ウィンドウを開かない
-;;(setq ns-pop-up-frames nil)
-
-;;;; C-z で最小化するのうざいのでころす
-;;(define-key global-map (kbd "C-z") nil)
+;; (xterm-mouse-mode t)
+;; (mouse-wheel-mode t)
+;; (global-set-key   [mouse-4] '(lambda () (interactive) (scroll-down 1)))
+;; (global-set-key   [mouse-5] '(lambda () (interactive) (scroll-up   1)))
 
