@@ -47,7 +47,7 @@
 
 ;; open-junk
 (setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/.junk/%Y-%m-%H%M%S_"))
-(global-set-key (kbd "C-c C-j") 'open-junk-file)
+(global-set-key (kbd "C-c j") 'open-junk-file)
 
 ;; howm
 (autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
