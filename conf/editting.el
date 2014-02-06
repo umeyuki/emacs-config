@@ -59,7 +59,7 @@
           '(lambda() (scss-custom)))
 
 ;; open-junk
-(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/.junk/%Y/%m/%Y-%m-%d-%H%M%S_"))
+(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/.junk/%Y-%m-%H%M%S_"))
 (global-set-key (kbd "C-c C-j") 'open-junk-file)
 
 
@@ -83,3 +83,9 @@
           (lambda ()
             (when (string-match "nginx" (buffer-file-name))
                             (nginx-mode))))
+
+;; howm
+(autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
+(global-set-key (kbd "C-l C-h") 'howm-menu)
+(setq howm-menu-lang 'ja)
+(setq howm-directory ( concat (getenv "HOME") "/Dropbox/.junk/"))
