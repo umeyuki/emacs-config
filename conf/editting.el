@@ -59,7 +59,7 @@
           '(lambda() (scss-custom)))
 
 ;; open-junk
-(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/.junk/%Y/%m/%Y-%m-%d-%H%M%S."))
+(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/.junk/%Y/%m/%Y-%m-%d-%H%M%S_junk."))
 (global-set-key (kbd "C-c C-j") 'open-junk-file)
 
 ;; nginx-mode
