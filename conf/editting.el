@@ -62,19 +62,11 @@
 (setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/.junk/%Y-%m-%H%M%S_"))
 (global-set-key (kbd "C-c C-j") 'open-junk-file)
 
-
-;; (require 'em-glob)
-;; (defvar junk-file-dir "~/Dropbox/.junk")
-;; (defvar junk-file-list
-;;   (reverse (eshell-extended-glob '')))
-;; (defvar anything-c-source-junk-files
-;;   '((name . "Junk Files")
-;;     (candidates . junk-file-list)
-;;     (type . file)))
-;; (defun anything-open-junk-file ()
-;;   (interactive)
-;;   (anything-other-buffer 'anything-c-source-junk-files "*anything for junk file"))
-;; (global-set-key (kbd "C-x M-j") 'anything-open-junk-file)
+;; howm
+(autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
+(global-set-key (kbd "C-l C-h") 'howm-menu)
+(setq howm-menu-lang 'ja)
+(setq howm-directory ( concat (getenv "HOME") "/Dropbox/.junk/"))
 
 ;; nginx-mode
 (require 'nginx-mode)
@@ -84,12 +76,8 @@
             (when (string-match "nginx" (buffer-file-name))
                             (nginx-mode))))
 
-;; howm
-(autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
-(global-set-key (kbd "C-l C-h") 'howm-menu)
-(setq howm-menu-lang 'ja)
-(setq howm-directory ( concat (getenv "HOME") "/Dropbox/.junk/"))
 
+; history like browser 
 (require 'historyf)
 (global-set-key (kbd "C-l C-b") 'historyf-back)
 (global-set-key (kbd "C-l C-f") 'historyf-forward)
