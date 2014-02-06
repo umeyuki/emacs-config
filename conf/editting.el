@@ -59,8 +59,22 @@
           '(lambda() (scss-custom)))
 
 ;; open-junk
-(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/.junk/%Y/%m/%Y-%m-%d-%H%M%S_junk."))
+(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/.junk/%Y/%m/%Y-%m-%d-%H%M%S_"))
 (global-set-key (kbd "C-c C-j") 'open-junk-file)
+
+
+;; (require 'em-glob)
+;; (defvar junk-file-dir "~/Dropbox/.junk")
+;; (defvar junk-file-list
+;;   (reverse (eshell-extended-glob '')))
+;; (defvar anything-c-source-junk-files
+;;   '((name . "Junk Files")
+;;     (candidates . junk-file-list)
+;;     (type . file)))
+;; (defun anything-open-junk-file ()
+;;   (interactive)
+;;   (anything-other-buffer 'anything-c-source-junk-files "*anything for junk file"))
+;; (global-set-key (kbd "C-x M-j") 'anything-open-junk-file)
 
 ;; nginx-mode
 (require 'nginx-mode)
