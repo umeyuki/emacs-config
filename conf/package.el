@@ -1,2 +1,6 @@
-;(package-install 'dayone)
-;(package-install 'redo+)
+(dolist (pkg '(dayone redo+ expand-region))
+  (unless (require pkg nil 'noerror)
+    (package-install pkg)  
+    )
+  )
+

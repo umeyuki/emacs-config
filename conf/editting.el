@@ -14,18 +14,6 @@
                     ))
 
 (setq-default tab-width 4 indent-tabs-mode nil)
-;; (when (and (executable-find "cmigemo")
-;;            (require 'migemo nil t))
-;;   (setq migemo-options '("-q" "--emacs"))
-
-;;   (setq migemo-user-dictionary nil)
-;;   (setq migemo-regex-dictionary nil)
-;;   (setq migemo-coding-system 'utf-8-unix)
-;;   (load-library "migemo")
-;;   (migemo-init)
-;; )
-;; (setq migemo-command "cmigemo")
-;; (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
 
 (require 'anzu)
 (global-anzu-mode +1)
@@ -40,7 +28,6 @@
 
 (global-set-key (kbd "C-l r") 'anzu-query-replace)
 (global-set-key (kbd "C-l R") 'anzu-query-replace-regexp)
-
 
 ;; scss
 (require 'scss-mode)
@@ -75,7 +62,6 @@
           (lambda ()
             (when (string-match "nginx" (buffer-file-name))
                             (nginx-mode))))
-
 
 ; history like browser 
 (require 'historyf)
