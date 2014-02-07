@@ -94,12 +94,27 @@
       (message err))))
 (define-key global-map (kbd "M-e") 'next-flymake-error)
 
+(defun flymake-perl-add-topdir-option ()
+  (let ((curdir (directory-file-name (file-name-directory (buffer-file-name)))))
+    (with-temp-buffer
+      (let ((ret (call-process-shell-command "git rev-parse --show-toplevel" nil t)))
+        (cond ((zerop ret)
+               (goto-char (point-min))
+               (let ((topdir (buffer-substring-no-properties (point) (line-end-position))))
+                 (unless (string= topdir curdir)
+                   (format "-I%s" topdir))))
+              (t nil))))))
+
 (defun flymake-perl-init ()
   (let* ((temp-file   (flymake-init-create-temp-buffer-copy
                        'flymake-create-temp-inplace))
+         (topdir  (flymake-perl-add-topdir-option)
+                  )
          (local-file  (file-relative-name
                        temp-file
-                       (file-name-directory buffer-file-name))))
+                       (file-name-directory buffer-file-name))
+                      )
+         )
     (list "perl" (list "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]" "-wc" local-file))))
 
 (setq flymake-allowed-file-name-masks
