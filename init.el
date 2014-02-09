@@ -18,7 +18,7 @@
                  "package.el"
                  "exec-path.el"
                  "misc.el"                                  
-                 "editting.el"
+                 "editing.el"
                  "window.el"
                  "git-gutter.el"
                  "helm.el"
