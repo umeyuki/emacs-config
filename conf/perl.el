@@ -115,7 +115,7 @@
                        (file-name-directory buffer-file-name))
                       )
          )
-    (list "perl" (list "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]" "-wc" local-file))))
+    (list "perl" (list "-MCwd" "-MProject::Libs lib_dirs => [('local/lib/perl5', '../' . Cwd::getcwd())]" "-wc" local-file))))
 
 (setq flymake-allowed-file-name-masks
       (cons '("\\.\\(t\\|p[ml]\\|psgi\\)$"
