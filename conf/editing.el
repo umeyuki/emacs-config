@@ -14,7 +14,7 @@
                     ))
 
 (setq-default tab-width 4 indent-tabs-mode nil)
-
+(setq create-lockfiles nil)
 (require 'anzu)
 (global-anzu-mode +1)
 (custom-set-variables
@@ -67,3 +67,5 @@
 (require 'historyf)
 (global-set-key (kbd "C-l C-b") 'historyf-back)
 (global-set-key (kbd "C-l C-f") 'historyf-forward)
+
+(require 'all-ext)
