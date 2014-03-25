@@ -73,14 +73,14 @@
                   (perltidy-region)))
 
 
-(require 'flymake)             
+(require 'flymake)
 (require 'perl-completion)
 
 ;; ;(setq flymake-log-level 3)
 
 (add-hook 'cperl-mode-hook
           '(lambda ()
-             (flymake-mode t)             
+             (flymake-mode t)
              (perl-completion-mode t)
              (add-to-list 'ac-sources 'ac-source-perl-completion)
              ))
@@ -94,6 +94,7 @@
       (message err))))
 (define-key global-map (kbd "M-e") 'next-flymake-error)
 
+
 (defun flymake-perl-add-topdir-option ()
   (let ((curdir (directory-file-name (file-name-directory (buffer-file-name)))))
     (with-temp-buffer
@@ -106,16 +107,15 @@
               (t nil))))))
 
 (defun flymake-perl-init ()
-  (let* ((temp-file   (flymake-init-create-temp-buffer-copy
-                       'flymake-create-temp-inplace))
-         (topdir  (flymake-perl-add-topdir-option)
-                  )
-         (local-file  (file-relative-name
-                       temp-file
-                       (file-name-directory buffer-file-name))
-                      )
-         )
-    (list "perl" (list "-MCwd" "-MProject::Libs lib_dirs => [('local/lib/perl5', '../' . Cwd::getcwd())]" "-wc" local-file))))
+  (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                     'flymake-create-temp-inplace))
+         (local-file (file-relative-name
+                      temp-file
+                      (file-name-directory buffer-file-name)))
+         (topdir (flymake-perl-add-topdir-option)))
+    (if topdir
+        `("perl" ,(list "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]" topdir "-wc" local-file))
+      `("perl" ,(list "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]", "-wc" local-file)))))
 
 (setq flymake-allowed-file-name-masks
       (cons '("\\.\\(t\\|p[ml]\\|psgi\\)$"
@@ -123,4 +123,3 @@
               flymake-simple-cleanup
               flymake-get-real-file-name)
             flymake-allowed-file-name-masks))
-

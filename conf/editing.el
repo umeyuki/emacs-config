@@ -14,7 +14,7 @@
                     ))
 
 (setq-default tab-width 4 indent-tabs-mode nil)
-
+(setq create-lockfiles nil)
 (require 'anzu)
 (global-anzu-mode +1)
 (custom-set-variables
@@ -25,6 +25,7 @@
  '(anzu-deactivate-region t)
  '(anzu-search-threshold 1000))
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (global-set-key (kbd "C-l r") 'anzu-query-replace)
 (global-set-key (kbd "C-l R") 'anzu-query-replace-regexp)
@@ -68,6 +69,7 @@
 (global-set-key (kbd "C-l C-b") 'historyf-back)
 (global-set-key (kbd "C-l C-f") 'historyf-forward)
 
+(require 'all-ext)
 ; utf08
 (set-locale-environment nil)
 (set-language-environment "Japanese")
@@ -77,3 +79,4 @@
 (setq default-buffer-file-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (prefer-coding-system 'utf-8)
+
