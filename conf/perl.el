@@ -73,14 +73,14 @@
                   (perltidy-region)))
 
 
-(require 'flymake)             
+(require 'flymake)
 (require 'perl-completion)
 
 ;; ;(setq flymake-log-level 3)
 
 (add-hook 'cperl-mode-hook
           '(lambda ()
-             (flymake-mode t)             
+             (flymake-mode t)
              (perl-completion-mode t)
              (add-to-list 'ac-sources 'ac-source-perl-completion)
              ))
@@ -115,7 +115,7 @@
                        (file-name-directory buffer-file-name))
                       )
          )
-    (list "perl" (list "-MCwd" "-MProject::Libs lib_dirs => [('local/lib/perl5', '../' . Cwd::getcwd())]" "-wc" local-file))))
+    (list "perl" (list "-MCwd" "-MProject::Libs lib_dirs => [('local/lib/perl5', './' . [split('/',Cwd::getcwd())]->[-2])]" "-wc" local-file))))
 
 (setq flymake-allowed-file-name-masks
       (cons '("\\.\\(t\\|p[ml]\\|psgi\\)$"
@@ -123,4 +123,3 @@
               flymake-simple-cleanup
               flymake-get-real-file-name)
             flymake-allowed-file-name-masks))
-

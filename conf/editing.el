@@ -25,6 +25,7 @@
  '(anzu-deactivate-region t)
  '(anzu-search-threshold 1000))
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (global-set-key (kbd "C-l r") 'anzu-query-replace)
 (global-set-key (kbd "C-l R") 'anzu-query-replace-regexp)
