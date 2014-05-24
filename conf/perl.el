@@ -115,7 +115,7 @@
          (topdir (flymake-perl-add-topdir-option)))
     (if topdir
         `("perl" ,(list "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]" topdir "-wc" local-file))
-      `("perl" ,(list "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]", "-wc" local-file)))))
+      `("perl" ,(list "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]"  "-wc" local-file)))))
 
 (setq flymake-allowed-file-name-masks
       (cons '("\\.\\(t\\|p[ml]\\|psgi\\)$"
