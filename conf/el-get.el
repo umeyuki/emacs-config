@@ -46,4 +46,5 @@
           howm
           historyf
           org-mode
+          smartparens
           ))
