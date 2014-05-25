@@ -45,4 +45,6 @@
           nginx-mode
           howm
           historyf
+          org-mode
+          smartparens
           ))
