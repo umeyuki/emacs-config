@@ -88,7 +88,7 @@
 (global-set-key (kbd "C-l C-b") 'historyf-back)
 (global-set-key (kbd "C-l C-f") 'historyf-forward)
 
-(require 'all-ext)
+;; (require 'all-ext)
 ; utf08
 (set-locale-environment nil)
 (set-language-environment "Japanese")
