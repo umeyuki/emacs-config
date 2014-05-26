@@ -63,7 +63,8 @@
 (defun helm-open-junk-file ()
   (interactive)
   (helm-other-buffer 'helm-c-source-junk-files "*helm for junk file"))
-(global-set-key (kbd "C-c j") 'helm-open-junk-file)
+(global-set-key (kbd "C-c j") 'open-junk-file)
+(global-set-key (kbd "C-c h") 'helm-open-junk-file)
 
 ;; howm
 (autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
