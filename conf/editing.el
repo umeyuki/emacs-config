@@ -50,11 +50,31 @@
 (setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Documents/Howm/%Y-%m-%H%M%S_"))
 (global-set-key (kbd "C-c j") 'open-junk-file)
 
+(require 'em-glob)
+(defvar junk-file-dir "~/Dropbox/Documents/Howm/")
+(defvar junk-file-list
+  (reverse (eshell-extended-glob (concat
+                                  (file-name-as-directory junk-file-dir)
+                                  "*"))))
+(defvar helm-c-source-junk-files
+  '((name . "Junk Files")
+    (candidates . junk-file-list)
+    (type . file)))
+(defun helm-open-junk-file ()
+  (interactive)
+  (helm-other-buffer 'helm-c-source-junk-files "*helm for junk file"))
+(global-set-key (kbd "C-c j") 'open-junk-file)
+(global-set-key (kbd "C-c h") 'helm-open-junk-file)
+
 ;; howm
 (autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
 (global-set-key (kbd "C-l C-h") 'howm-menu)
 (setq howm-menu-lang 'ja)
 (setq howm-directory ( concat (getenv "HOME") "/Dropbox/Documents/Howm/"))
+(setq howm-view-use-grep t)
+(defadvice howm-list-migemo (around use-fake-grep activate)
+  (let ((howm-view-use-grep nil))
+    ad-do-it))
 
 ;; nginx-mode
 (require 'nginx-mode)
