@@ -15,9 +15,6 @@
              ;; (electric-pair-mode nil)
              (electric-indent-mode t)
              (electric-layout-mode t)
-             ;; (setq electric-pair-pairs '(
-             ;;                             (?\| . ?\|)
-             ;;                             ))
              ))
 
 ; slim-mode
