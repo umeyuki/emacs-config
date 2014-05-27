@@ -47,7 +47,7 @@
           '(lambda() (scss-custom)))
 
 ;; open-junk
-(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Documents/Howm/"))
+(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Documents/Howm/%Y-%m-%H%M%S_"))
 (global-set-key (kbd "C-c j") 'open-junk-file)
 
 ;; howm
