@@ -71,10 +71,10 @@
 (global-set-key (kbd "C-l C-h") 'howm-menu)
 (setq howm-menu-lang 'ja)
 (setq howm-directory ( concat (getenv "HOME") "/Dropbox/Write/"))
-(setq howm-view-use-grep t)
-(defadvice howm-list-migemo (around use-fake-grep activate)
-  (let ((howm-view-use-grep nil))
-    ad-do-it))
+;; (setq howm-view-use-grep t)
+;; (defadvice howm-list-migemo (around use-fake-grep activate)
+;;   (let ((howm-view-use-grep nil))
+;;     ad-do-it))
 
 ;; nginx-mode
 (require 'nginx-mode)
