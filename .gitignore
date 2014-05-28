@@ -3,3 +3,4 @@ elpa
 ac-comphist.dat
 auto-save-list
 *.elc
+.mc-lists.el
