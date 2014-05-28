@@ -47,11 +47,11 @@
           '(lambda() (scss-custom)))
 
 ;; open-junk
-(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Documents/Howm/%Y-%m-%H%M%S_"))
+(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Write/%Y-%m-%H%M%S_"))
 (global-set-key (kbd "C-c j") 'open-junk-file)
 
 (require 'em-glob)
-(defvar junk-file-dir "~/Dropbox/Documents/Howm/")
+(defvar junk-file-dir "~/Dropbox/Write/")
 (defvar junk-file-list
   (reverse (eshell-extended-glob (concat
                                   (file-name-as-directory junk-file-dir)
@@ -70,7 +70,7 @@
 (autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
 (global-set-key (kbd "C-l C-h") 'howm-menu)
 (setq howm-menu-lang 'ja)
-(setq howm-directory ( concat (getenv "HOME") "/Dropbox/Documents/Howm/"))
+(setq howm-directory ( concat (getenv "HOME") "/Dropbox/Write/"))
 (setq howm-view-use-grep t)
 (defadvice howm-list-migemo (around use-fake-grep activate)
   (let ((howm-view-use-grep nil))
