@@ -38,7 +38,6 @@
 (depends-on "anzu")
 (depends-on "smartrep")
 (depends-on "multiple-cursors")
-(depends-on "open-junk-file")
 (depends-on "nginx-mode")
 (depends-on "howm")
 (depends-on "historyf")
