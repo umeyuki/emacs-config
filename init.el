@@ -1,3 +1,7 @@
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+(require 'pallet)
+
 ; elpa
 (require 'package)
 
@@ -17,7 +21,7 @@
                  "el-get.el"
                  "package.el"
                  "exec-path.el"
-                 "misc.el"                                  
+                 "misc.el"
                  "editing.el"
                  "window.el"
                  "git-gutter.el"

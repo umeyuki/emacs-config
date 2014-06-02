@@ -18,32 +18,6 @@
 
 (el-get 'sync
         '(
-          el-get
-          git-gutter
-          helm
-          auto-complete
-          perl-completion
-          popwin
-          quickrun
-          auto-async-byte-compile
-          emmet-mode
-          scss-mode
-          slim-mode
-          js2-mode
-          coffee-mode
-          color-theme
-          color-theme-solarized
-          dash-at-point
-          helm-project
-          pbcopy
-          yasnippet
-          helm-c-yasnippet
-          anzu
-          smartrep
-          multiple-cursors
-          open-junk-file
-          nginx-mode
           howm
-          historyf
-          smartparens
+          helm-project
           ))
