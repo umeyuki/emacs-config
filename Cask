@@ -31,7 +31,6 @@
 (depends-on "color-theme")
 (depends-on "color-theme-solarized")
 (depends-on "dash-at-point")
-(depends-on "helm-project" :git "git@github.com:shishi/helm-project.git")
 (depends-on "helm-open-junk-file" :git "git@github.com:masaaki1001/helm-open-junk-file.git")
 (depends-on "pbcopy" :git "git@github.com:jeffgran/pbcopy.el.git")
 (depends-on "yasnippet")
