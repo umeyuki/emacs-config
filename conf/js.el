@@ -1,6 +1,13 @@
-(autoload 'js2-mode "js2-mode" nil t)
+(when (load "js2" t)
+  (setq js2-cleanup-whitespace nil
+        js2-mirror-mode nil
+        js2-bounce-indent-flag nil)
+  (autoload 'js2-mode "js2-mode" nil t)  )
+
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
+
+
 
 (require 'coffee-mode)
 (defun coffee-custom ()
