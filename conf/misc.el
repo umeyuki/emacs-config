@@ -33,11 +33,10 @@
 ;; 先ほどとは異なりglobal-set-keyを利用
 (global-set-key (kbd "C-j") 'newline-and-indent)
 
-;; mark-sexp 
+;; mark-sexp
 (define-key global-map (kbd "C-l C-p") 'mark-sexp)
-;; esell
 
-(define-key global-map (kbd "C-l s") 'eshell)
+;; (define-key global-map (kbd "C-l s") 'eshell)
 
 ;; unique buffer
 (require 'uniquify)
@@ -57,10 +56,10 @@
 ;;undo redo
 (when (require 'redo+ nil t)
   (global-set-key (kbd "C-M-\\") 'redo)
-  ) 
+  )
 
 ;; goto-line
-(define-key ctl-x-map "l" 'goto-line) 
+(define-key ctl-x-map "l" 'goto-line)
 
 
 ;; スタートアップ時のメッセージを抑制
@@ -79,7 +78,7 @@
 (delete-selection-mode 1)
 
 ;; インデントはスペースで
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabss-mode nil)
 
 ;; タブ幅は4
 (setq-default tab-width 4)
@@ -99,4 +98,3 @@
 ;; (mouse-wheel-mode t)
 ;; (global-set-key   [mouse-4] '(lambda () (interactive) (scroll-down 1)))
 ;; (global-set-key   [mouse-5] '(lambda () (interactive) (scroll-up   1)))
-

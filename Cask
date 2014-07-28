@@ -31,6 +31,7 @@
 (depends-on "historyf")
 (depends-on "all-ext")
 
+
 (depends-on "git-gutter")
 (depends-on "helm")
 (depends-on "anything")
@@ -47,8 +48,6 @@
 (depends-on "color-theme")
 (depends-on "color-theme-solarized")
 (depends-on "dash-at-point")
-(depends-on "helm-project")
-(depends-on "pbcopy")
 (depends-on "yasnippet")
 (depends-on "helm-c-yasnippet")
 (depends-on "anzu")
@@ -56,6 +55,10 @@
 (depends-on "multiple-cursors")
 (depends-on "open-junk-file")
 (depends-on "nginx-mode")
-(depends-on "howm")
 (depends-on "historyf")
 (depends-on "smartparens")
+(depends-on "rspec-mode")
+(depends-on "ag")
+(depends-on "wgrep-ag")
+(depends-on "color-moccur")
+(depends-on "all-ext")
