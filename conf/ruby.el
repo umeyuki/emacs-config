@@ -19,3 +19,7 @@
 
 ; slim-mode
 (require 'slim-mode)
+
+; rspec-mode
+(require 'rspec-mode)
+(custom-set-variables '(rspec-use-rake-flag nil))

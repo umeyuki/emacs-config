@@ -21,4 +21,5 @@
           howm
           helm-project
           open-junk-file
+          pbcopy
           ))

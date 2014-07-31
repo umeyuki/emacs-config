@@ -7,8 +7,6 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 
-
-
 (require 'coffee-mode)
 (defun coffee-custom ()
   "coffee-mode-hook"
