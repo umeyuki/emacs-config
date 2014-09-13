@@ -25,7 +25,7 @@
  '(anzu-deactivate-region t)
  '(anzu-search-threshold 1000))
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (global-set-key (kbd "C-l r") 'anzu-query-replace)
 (global-set-key (kbd "C-l R") 'anzu-query-replace-regexp)
@@ -47,7 +47,7 @@
           '(lambda() (scss-custom)))
 
 ;; open-junk
-(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Write/%Y%m%d-%H%M%S_"))
+(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Write/%Y%m%d_"))
 (global-set-key (kbd "C-c j") 'open-junk-file)
 
 (require 'em-glob)
