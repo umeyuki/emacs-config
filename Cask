@@ -45,8 +45,6 @@
 (depends-on "slim-mode")
 (depends-on "js2-mode")
 (depends-on "coffee-mode")
-(depends-on "color-theme")
-(depends-on "color-theme-solarized")
 (depends-on "dash-at-point")
 (depends-on "yasnippet")
 (depends-on "helm-c-yasnippet")
