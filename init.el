@@ -40,6 +40,7 @@
                  "color-theme.el"
                  "server.el"
                  "dayone.el"
+                 "org-mode.el"
                 )))
   (dolist (conf conf-list)
     (load (concat user-emacs-directory "conf/" conf))))
