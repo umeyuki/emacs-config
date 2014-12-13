@@ -25,6 +25,7 @@
  '(anzu-deactivate-region t)
  '(anzu-search-threshold 1000))
 
+
 ; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (global-set-key (kbd "C-l r") 'anzu-query-replace)
@@ -57,24 +58,20 @@
                                   (file-name-as-directory junk-file-dir)
                                   "*"))))
 (defvar helm-c-source-junk-files
-  '((name . "Junk Files")
+  '((name . "Notes")
     (candidates . junk-file-list)
     (type . file)))
 (defun helm-open-junk-file ()
   (interactive)
   (helm-other-buffer 'helm-c-source-junk-files "*helm for junk file"))
-(global-set-key (kbd "C-c j") 'open-junk-file)
-(global-set-key (kbd "C-c h") 'helm-open-junk-file)
+(global-set-key (kbd "C-c C-j") 'open-junk-file)
+(global-set-key (kbd "C-c C-h") 'helm-open-junk-file)
 
 ;; howm
 (autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
 (global-set-key (kbd "C-l C-h") 'howm-menu)
 (setq howm-menu-lang 'ja)
 (setq howm-directory ( concat (getenv "HOME") "/Dropbox/Write/"))
-;; (setq howm-view-use-grep t)
-;; (defadvice howm-list-migemo (around use-fake-grep activate)
-;;   (let ((howm-view-use-grep nil))
-;;     ad-do-it))
 
 ;; nginx-mode
 (require 'nginx-mode)
