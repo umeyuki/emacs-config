@@ -64,3 +64,4 @@
 (depends-on "color-moccur")
 (depends-on "all-ext")
 (depends-on "helm-ghq")
+(depends-on "helm-ag")
