@@ -64,3 +64,5 @@
 (depends-on "all-ext")
 (depends-on "helm-ghq")
 (depends-on "org-gcal")
+(depends-on "helm-ag")
+
