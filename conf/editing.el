@@ -25,9 +25,6 @@
  '(anzu-deactivate-region t)
  '(anzu-search-threshold 1000))
 
-
-; (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 (global-set-key (kbd "C-l r") 'anzu-query-replace)
 (global-set-key (kbd "C-l R") 'anzu-query-replace-regexp)
 
@@ -35,8 +32,7 @@
 (require 'scss-mode)
 (add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
 
-;; インデント幅を2にする
-;; コンパイルは compass watchで行うので自動コンパイルをオフ
+;; indent 2
 (defun scss-custom ()
   "scss-mode-hook"
   (and
@@ -48,7 +44,7 @@
           '(lambda() (scss-custom)))
 
 ;; open-junk
-(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Write/%Y%m%d_"))
+(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Write/%Y%m%d_note.org"))
 (global-set-key (kbd "C-c j") 'open-junk-file)
 
 (require 'em-glob)
@@ -145,3 +141,4 @@
 ;; create auto-save file in ~/.emacs.d/backup
 (setq auto-save-file-name-transforms
       `((".*" ,(expand-file-name "~/.emacs.d/backup/") t)))
+

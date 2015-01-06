@@ -25,8 +25,14 @@
 ;; ;;TABで任意補完。選択肢が出てきたらC-nやC-pで上下移動してから決定することも可能
 (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
 
+(require 'helm-files)
 (require 'helm-ag)
 
 (global-set-key (kbd "C-l C-g") 'helm-ag)
 (global-set-key (kbd "C-l ,") 'helm-ag-pop-stack)
 (global-set-key (kbd "C-M-,") 'helm-ag-this-file)
+
+;; (global-set-key (kbd "M-g .") 'helm-ag)
+;; (global-set-key (kbd "M-g ,") 'helm-ag-pop-stack)
+;; (global-set-key (kbd "C-M-s") 'helm-ag-this-file)
+
