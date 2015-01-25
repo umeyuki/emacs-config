@@ -44,3 +44,4 @@
                 )))
   (dolist (conf conf-list)
     (load (concat user-emacs-directory "conf/" conf))))
+(put 'set-goal-column 'disabled nil)

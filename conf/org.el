@@ -1,7 +1,8 @@
 (setq org-directory (concat (getenv "HOME") "/Dropbox/Write/"))
 (setq org-default-notes-file (concat org-directory "capture.org"))
 
-(setq org-agenda-files  (file-expand-wildcards (concat org-directory "/*.org")))
+(setq org-agenda-files (list org-directory))
+;; (setq org-agenda-files  (file-expand-wildcards (concat org-directory "/*.org")))
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)

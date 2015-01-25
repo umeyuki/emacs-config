@@ -2,6 +2,7 @@
 (require 'multiple-cursors)
 (require 'smartrep)
 
+(define-key global-map (kbd "C-c q") 'quoted-insert)
 (global-set-key (kbd "C-l C-e") 'er/expand-region)
 (global-set-key (kbd "C-l C-c") 'er/contract-region)
 (global-set-key (kbd "C-l C-j") 'mc/edit-lines)
@@ -44,7 +45,7 @@
           '(lambda() (scss-custom)))
 
 ;; open-junk
-(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Write/%Y%m%d_"))
+(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Write/%Y%m%d_note.org"))
 (global-set-key (kbd "C-c j") 'open-junk-file)
 
 (require 'em-glob)
@@ -142,3 +143,5 @@
 (setq auto-save-file-name-transforms
       `((".*" ,(expand-file-name "~/.emacs.d/backup/") t)))
 
+
+(setq auto-mode-alist (cons '("\\.md" . gfm-mode) auto-mode-alist))

@@ -23,3 +23,4 @@
 ; rspec-mode
 (require 'rspec-mode)
 (custom-set-variables '(rspec-use-rake-flag nil))
+(setq ruby-insert-encoding-magic-comment nil)
