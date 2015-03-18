@@ -45,7 +45,7 @@
           '(lambda() (scss-custom)))
 
 ;; open-junk
-(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Write/%Y%m%d_note.org"))
+(setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Write/%Y%m%d.org"))
 (global-set-key (kbd "C-c j") 'open-junk-file)
 
 (require 'em-glob)
@@ -145,3 +145,6 @@
 
 
 (setq auto-mode-alist (cons '("\\.md" . gfm-mode) auto-mode-alist))
+
+;; remove the unnecessary trailing spaces
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
