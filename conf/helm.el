@@ -33,29 +33,29 @@
 (global-set-key (kbd "C-M-,") 'helm-ag-this-file)
 
 
-;; (require 'helm-gtags)
-;; (add-hook 'go-mode-hook (lambda () (helm-gtags-mode)))
-;; (add-hook 'python-mode-hook (lambda () (helm-gtags-mode)))
-;; (add-hook 'ruby-mode-hook (lambda () (helm-gtags-mode)))
-;; (setq helm-gtags-path-style 'root)
-;; (setq helm-gtags-auto-update t)
-;; (add-hook 'helm-gtags-mode-hook
-;;           '(lambda ()
-;;              (local-set-key (kbd "M-g") 'helm-gtags-dwim)
-;;              (local-set-key (kbd "M-s") 'helm-gtags-show-stack)
-;;              (local-set-key (kbd "M-p") 'helm-gtags-previous-history)
-;;              (local-set-key (kbd "M-n") 'helm-gtags-next-history)))
-
-(require 'helm-config)
 (require 'helm-gtags)
-
-(add-hook 'ruby-mode-hook 'helm-gtags-mode)
-(add-hook 'java-mode-hook 'helm-gtags-mode)
-
-;; key bindings
+(add-hook 'go-mode-hook (lambda () (helm-gtags-mode)))
+(add-hook 'python-mode-hook (lambda () (helm-gtags-mode)))
+(add-hook 'ruby-mode-hook (lambda () (helm-gtags-mode)))
+(setq helm-gtags-path-style 'root)
+(setq helm-gtags-auto-update t)
 (add-hook 'helm-gtags-mode-hook
           '(lambda ()
-              (local-set-key (kbd "M-t") 'helm-gtags-find-tag)
-              (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
-              (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
-              (local-set-key (kbd "C-t") 'helm-gtags-pop-stack)))
+             (local-set-key (kbd "M-g") 'helm-gtags-dwim)
+             (local-set-key (kbd "M-s") 'helm-gtags-show-stack)
+             (local-set-key (kbd "M-p") 'helm-gtags-previous-history)
+             (local-set-key (kbd "M-n") 'helm-gtags-next-history)))
+
+;; (require 'helm-config)
+;; (require 'helm-gtags)
+
+;; (add-hook 'ruby-mode-hook 'helm-gtags-mode)
+;; (add-hook 'java-mode-hook 'helm-gtags-mode)
+
+;; ;; key bindings
+;; (add-hook 'helm-gtags-mode-hook
+;;           '(lambda ()
+;;               (local-set-key (kbd "M-t") 'helm-gtags-find-tag)
+;;               (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
+;;               (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
+;;               (local-set-key (kbd "C-t") 'helm-gtags-pop-stack)))
