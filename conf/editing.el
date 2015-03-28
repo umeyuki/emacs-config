@@ -14,7 +14,7 @@
                     (";" . 'mc/mark-all-like-this)
                     ))
 
-(setq-default tab-width 4 indent-tabs-mode nil)
+(setq-default tab-width 2 indent-tabs-mode nil)
 (setq create-lockfiles nil)
 (require 'anzu)
 (global-anzu-mode +1)
@@ -95,8 +95,8 @@
 (prefer-coding-system 'utf-8)
 
 ;smartparens
-(require 'smartparens-config)
-(smartparens-global-mode t)
+;; (require 'smartparens-config)
+;; (smartparens-global-mode t)
 
 ;; ag(The Silver Searcher)コマンドを以下からインストール:
 ;;     http://github.com/ggreer/the_silver_searcher#installation

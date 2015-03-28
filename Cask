@@ -54,7 +54,7 @@
 (depends-on "open-junk-file")
 (depends-on "nginx-mode")
 (depends-on "historyf")
-(depends-on "smartparens")
+(depends-on "smartparens" "1.6.2")
 (depends-on "rspec-mode")
 (depends-on "markdown-mode")
 (depends-on "ag")
@@ -65,4 +65,7 @@
 (depends-on "helm-ghq")
 (depends-on "org-gcal")
 (depends-on "helm-ag")
-
+(depends-on "rubocop")
+(depends-on "flycheck-color-mode-line")
+(depends-on "ac-js2")
+(depends-on "helm-gtags")
