@@ -45,6 +45,7 @@
           '(lambda() (scss-custom)))
 
 ;; open-junk
+(require 'open-junk-file)
 (setq open-junk-file-format ( concat (getenv "HOME") "/Dropbox/Write/%Y%m%d.org"))
 (global-set-key (kbd "C-c j") 'open-junk-file)
 
@@ -130,8 +131,6 @@
                     (call-interactively 'ag)
                     (select-window ; select ag buffer
                      (car (my/get-buffer-window-list-regexp "^\\*ag ")))))
-; ghq
-(global-set-key (kbd "M-p") 'helm-ghq)
 
 ;; create backup file in ~/.emacs.d/backup
 (setq make-backup-files t)
@@ -148,3 +147,21 @@
 
 ;; remove the unnecessary trailing spaces
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+; gtags save hook
+ (defun gtags-update-single(filename)
+      "Update Gtags database for changes in a single file"
+      (interactive)
+      (start-process "update-gtags" "update-gtags" "bash" "-c" (concat "cd " (gtags-root-dir) " ; gtags --single-update " filename )))
+    (defun gtags-update-current-file()
+      (interactive)
+      (defvar filename)
+      (setq filename (replace-regexp-in-string (gtags-root-dir) "." (buffer-file-name (current-buffer))))
+      (gtags-update-single filename)
+      (message "Gtags updated for %s" filename))
+    (defun gtags-update-hook()
+      "Update GTAGS file incrementally upon saving a file"
+      (when gtags-mode
+        (when (gtags-root-dir)
+          (gtags-update-current-file))))
+    (add-hook 'after-save-hook 'gtags-update-hook)
