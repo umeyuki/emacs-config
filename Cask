@@ -69,3 +69,4 @@
 (depends-on "flycheck-color-mode-line")
 (depends-on "ac-js2")
 (depends-on "helm-gtags")
+(depends-on "jsx-mode")

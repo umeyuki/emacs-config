@@ -35,27 +35,23 @@
 
 (require 'helm-gtags)
 (add-hook 'go-mode-hook (lambda () (helm-gtags-mode)))
-(add-hook 'python-mode-hook (lambda () (helm-gtags-mode)))
 (add-hook 'ruby-mode-hook (lambda () (helm-gtags-mode)))
-(setq helm-gtags-path-style 'root)
-(setq helm-gtags-auto-update t)
-(add-hook 'helm-gtags-mode-hook
-          '(lambda ()
-             (local-set-key (kbd "M-g") 'helm-gtags-dwim)
-             (local-set-key (kbd "M-s") 'helm-gtags-show-stack)
-             (local-set-key (kbd "M-p") 'helm-gtags-previous-history)
-             (local-set-key (kbd "M-n") 'helm-gtags-next-history)))
+(add-hook 'gfm-mode-hook (lambda () (helm-gtags-mode)))
+(add-hook 'js2-mode-hook (lambda () (helm-gtags-mode)))
 
-;; (require 'helm-config)
-;; (require 'helm-gtags)
+;; customize
+(custom-set-variables
+ '(helm-gtags-path-style 'relative)
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-auto-update t))
 
-;; (add-hook 'ruby-mode-hook 'helm-gtags-mode)
-;; (add-hook 'java-mode-hook 'helm-gtags-mode)
-
-;; ;; key bindings
-;; (add-hook 'helm-gtags-mode-hook
-;;           '(lambda ()
-;;               (local-set-key (kbd "M-t") 'helm-gtags-find-tag)
-;;               (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
-;;               (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
-;;               (local-set-key (kbd "C-t") 'helm-gtags-pop-stack)))
+;; key bindings
+(eval-after-load "helm-gtags"
+  '(progn
+     (define-key helm-gtags-mode-map (kbd "M-g") 'helm-gtags-dwim)
+     (define-key helm-gtags-mode-map (kbd "M-f") 'helm-gtags-find-tag)
+     (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
+     (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
+     (define-key helm-gtags-mode-map (kbd "M-p") 'helm-gtags-previous-history)
+     (define-key helm-gtags-mode-map (kbd "M-n") 'helm-gtags-next-history)
+     (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))

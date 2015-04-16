@@ -1,4 +1,3 @@
-
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 (require 'pallet)
@@ -32,6 +31,7 @@
                  "auto-complete.el"
                  "emmet.el"
                  "js.el"
+                 "jsx.el"
                  "ruby.el"
                  "perl.el"
                  "popwin.el"
