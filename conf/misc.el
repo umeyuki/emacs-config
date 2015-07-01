@@ -6,11 +6,6 @@
 ;; バッファ自動再読み込み
 (global-auto-revert-mode 1)
 
-;; ;; auto-async-byte-compile
-;; (require 'auto-async-byte-compile)
-;; (autoload 'enable-auto-async-byte-compile-mode "auto-async-byte-compile" nil t)
-;; (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
-
 ;; exchange alt <-> meta
 (custom-set-variables
    '(ns-alternate-modifier 'alt)
@@ -24,7 +19,6 @@
 (define-key global-map (kbd "C-o") 'other-window)
 (define-key global-map (kbd "C-\\") 'undo)
 (define-key global-map (kbd "C-l \\") 'indent-region)
-(define-key global-map (kbd "C-l e") 'eval-current-buffer)
 
 ;; 折り返しトグルコマンド
 (define-key global-map (kbd "C-c l") 'toggle-truncate-lines)
@@ -38,7 +32,7 @@
 
 ;; (define-key global-map (kbd "C-l s") 'eshell)
 
-;; unique buffer
+;; unique buffer 同じファイル名の時親ディレクトリを表示
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 (setq uniquify-ignore-buffers-re "[^*]+*")
@@ -80,8 +74,8 @@
 ;; インデントはスペースで
 (setq-default indent-tabss-mode nil)
 
-;; タブ幅は4
-(setq-default tab-width 4)
+;; タブ幅は2
+(setq-default tab-width 2)
 
 ;; 対応する括弧を光らせる
 (show-paren-mode 1)
@@ -93,8 +87,3 @@
 ;; add +x to saving file
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
-
-;; (xterm-mouse-mode t)
-;; (mouse-wheel-mode t)
-;; (global-set-key   [mouse-4] '(lambda () (interactive) (scroll-down 1)))
-;; (global-set-key   [mouse-5] '(lambda () (interactive) (scroll-up   1)))

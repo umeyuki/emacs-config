@@ -14,7 +14,6 @@
 (depends-on "idle-highlight-mode")
 (depends-on "magit")
 (depends-on "multiple-cursors")
-(depends-on "nyan-mode")
 (depends-on "pallet")
 (depends-on "popwin")
 (depends-on "prodigy")
@@ -25,12 +24,10 @@
 (depends-on "use-package")
 (depends-on "web-mode")
 
-(depends-on "dayone")
 (depends-on "redo+")
 (depends-on "expand-region")
 (depends-on "historyf")
 (depends-on "all-ext")
-
 
 (depends-on "git-gutter")
 (depends-on "helm")
@@ -70,3 +67,4 @@
 (depends-on "ac-js2")
 (depends-on "helm-gtags")
 (depends-on "jsx-mode")
+(depends-on "go-mode")

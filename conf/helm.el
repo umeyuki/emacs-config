@@ -33,25 +33,25 @@
 (global-set-key (kbd "C-M-,") 'helm-ag-this-file)
 
 
-(require 'helm-gtags)
-(add-hook 'go-mode-hook (lambda () (helm-gtags-mode)))
-(add-hook 'ruby-mode-hook (lambda () (helm-gtags-mode)))
-(add-hook 'gfm-mode-hook (lambda () (helm-gtags-mode)))
-(add-hook 'js2-mode-hook (lambda () (helm-gtags-mode)))
+;; (require 'helm-gtags)
+;; (add-hook 'go-mode-hook (lambda () (helm-gtags-mode)))
+;; (add-hook 'ruby-mode-hook (lambda () (helm-gtags-mode)))
+;; (add-hook 'gfm-mode-hook (lambda () (helm-gtags-mode)))
+;; (add-hook 'js2-mode-hook (lambda () (helm-gtags-mode)))
 
-;; customize
-(custom-set-variables
- '(helm-gtags-path-style 'relative)
- '(helm-gtags-ignore-case t)
- '(helm-gtags-auto-update t))
+;; ;; customize
+;; (custom-set-variables
+;;  '(helm-gtags-path-style 'relative)
+;;  '(helm-gtags-ignore-case t)
+;;  '(helm-gtags-auto-update t))
 
-;; key bindings
-(eval-after-load "helm-gtags"
-  '(progn
-     (define-key helm-gtags-mode-map (kbd "M-g") 'helm-gtags-dwim)
-     (define-key helm-gtags-mode-map (kbd "M-f") 'helm-gtags-find-tag)
-     (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
-     (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
-     (define-key helm-gtags-mode-map (kbd "M-p") 'helm-gtags-previous-history)
-     (define-key helm-gtags-mode-map (kbd "M-n") 'helm-gtags-next-history)
-     (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))
+;; ;; key bindings
+;; (eval-after-load "helm-gtags"
+;;   '(progn
+;;      (define-key helm-gtags-mode-map (kbd "M-g") 'helm-gtags-dwim)
+;;      (define-key helm-gtags-mode-map (kbd "M-f") 'helm-gtags-find-tag)
+;;      (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
+;;      (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
+;;      (define-key helm-gtags-mode-map (kbd "M-p") 'helm-gtags-previous-history)
+;;      (define-key helm-gtags-mode-map (kbd "M-n") 'helm-gtags-next-history)
+;;      (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))

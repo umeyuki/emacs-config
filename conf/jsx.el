@@ -8,7 +8,7 @@
 (require 'jsx-mode)
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 
-(require 'flycheck)
+;; flycheck
 (flycheck-define-checker jsxhint-checker
   "A JSX syntax and style checker based on JSXHint."
 

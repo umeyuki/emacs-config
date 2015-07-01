@@ -1,6 +1,15 @@
+(define-key global-map (kbd "C-c m") 'toggle-input-method)
+
+
 (require 'expand-region)
 (require 'multiple-cursors)
 (require 'smartrep)
+(require 'nginx-mode)
+;;(add-to-list 'auto-mode-alist '("nginx\\.conf$" . nginx-mode))
+(add-hook 'conf-mode-hook
+          (lambda ()
+            (when (string-match "nginx" (buffer-file-name))
+                            (nginx-mode))))
 
 (define-key global-map (kbd "C-c q") 'quoted-insert)
 (global-set-key (kbd "C-l C-e") 'er/expand-region)
@@ -64,20 +73,6 @@
   (helm-other-buffer 'helm-c-source-junk-files "*helm for junk file"))
 (global-set-key (kbd "C-c C-j") 'open-junk-file)
 (global-set-key (kbd "C-c C-h") 'helm-open-junk-file)
-
-;; howm
-(autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
-(global-set-key (kbd "C-l C-h") 'howm-menu)
-(setq howm-menu-lang 'ja)
-(setq howm-directory ( concat (getenv "HOME") "/Dropbox/Write/"))
-
-;; nginx-mode
-(require 'nginx-mode)
-;;(add-to-list 'auto-mode-alist '("nginx\\.conf$" . nginx-mode))
-(add-hook 'conf-mode-hook
-          (lambda ()
-            (when (string-match "nginx" (buffer-file-name))
-                            (nginx-mode))))
 
 ; history like browser
 (require 'historyf)

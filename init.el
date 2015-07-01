@@ -30,8 +30,10 @@
                  "yasnippet.el"
                  "auto-complete.el"
                  "emmet.el"
+                 "flycheck.el"
                  "js.el"
                  "jsx.el"
+                 "go.el"
                  "ruby.el"
                  "perl.el"
                  "popwin.el"
@@ -40,7 +42,6 @@
                  "dash.el"
                  "color-theme.el"
                  "server.el"
-                 "dayone.el"
                  "org.el"
                 )))
   (dolist (conf conf-list)
