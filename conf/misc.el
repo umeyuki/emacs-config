@@ -1,4 +1,4 @@
-(scroll-bar-mode -1)
+;;(scroll-bar-mode -1)
 
 ;; 大文字・小文字を区別しない
 (setq completion-ignore-case t)

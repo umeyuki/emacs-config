@@ -1,4 +1,4 @@
-(require 'cask "~/.cask/cask.el")
+(require 'cask)
 (cask-initialize)
 (require 'pallet)
 
@@ -43,6 +43,7 @@
                  "color-theme.el"
                  "server.el"
                  "org.el"
+                 "php.el"
                 )))
   (dolist (conf conf-list)
     (load (concat user-emacs-directory "conf/" conf))))

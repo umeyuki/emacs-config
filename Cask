@@ -68,3 +68,5 @@
 (depends-on "helm-gtags")
 (depends-on "jsx-mode")
 (depends-on "go-mode")
+(depends-on "pbcopy")
+(depends-on "php-mode")
