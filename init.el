@@ -32,7 +32,7 @@
                  "emmet.el"
                  "flycheck.el"
                  "js.el"
-                 "jsx.el"
+                 ;; "jsx.el"
                  "go.el"
                  "ruby.el"
                  "perl.el"
@@ -44,6 +44,7 @@
                  "server.el"
                  "org.el"
                  "php.el"
+                 "vue.el"
                 )))
   (dolist (conf conf-list)
     (load (concat user-emacs-directory "conf/" conf))))

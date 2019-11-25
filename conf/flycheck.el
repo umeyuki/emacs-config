@@ -1,1 +1,1 @@
-(require 'flycheck)
+;; (require 'flycheck)

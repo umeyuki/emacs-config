@@ -70,3 +70,4 @@
 (depends-on "go-mode")
 (depends-on "pbcopy")
 (depends-on "php-mode")
+(depends-on "vue-mode")
